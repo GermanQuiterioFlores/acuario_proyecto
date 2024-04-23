@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Monitoreo</title>
+</head>
+<body>
+    <div class="contenedor_principal">
+        <h1>Monitoreo de pecera</h1>
+    </div>
+    <div class="contenedor">
+        <div class="contenedor_izquierda">
+            <h2>Clima</h2>
+            <div class="sensor">
+                <div class="temperatura">
+                    <h3>Temperatura</h3>
+                    <p>La temperatura actual es de: <span id="temperature"></span>°C</p>
+                </div>
+                <div class="humedad">
+                    <h3>Humedad</h3>
+                    <p>La humedad actual es de: <span id="humidity"></span>%</p>
+                </div>
+            </div>
+        </div>
+        <div class="contenedor_derecha">
+            <h2>Alimentación</h2>
+            <button onclick="sendServoCommand()">Cambiar Estado del Servo</button>
+        </div>
+    </div>
+    <div class="abajo">
+        <div class="temperatura_agua">
+            <h2>Temperatura del agua</h2>
+            <p>La temperatura actual del agua es de: <span id=""></span>°C</p>
+        </div>  
+    </div>
+    <footer class="contacto">
+        <h4>Para cualquier aclaración, por favor llamar al +55 5566778899</h4>
+    </footer>
+    <script>
+        function sendServoCommand() {
+            fetch('https://tecnologiasdosproyectofinal.000webhostapp.com/servo_control.php')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error al enviar el comando al servidor');
+                }
+                console.log('Comando enviado con éxito al servidor');
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        // Consulta los datos desde el servidor y actualiza la página
+        fetch('https://tecnologiasdosproyectofinal.000webhostapp.com/get_data.php')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('humidity').textContent = data.humidity;
+                document.getElementById('temperature').textContent = data.temperature;
+            })
+            .catch(error => console.error('Error al obtener datos:', error));
+    </script>
+</body>
+</html>

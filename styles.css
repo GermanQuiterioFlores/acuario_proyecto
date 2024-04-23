@@ -1,0 +1,128 @@
+:root{
+    --fuenteHeading: "PT Sans", sans-serif;
+    --fuenteParrafos: "Open Sans", sans-serif;
+    --fuenteCool: "Honk", system-ui;
+
+    --primario: #784D3C;
+    --blanco: #FFFFFF;
+    --negro: #000000;
+
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;    /*1rem es igual a 10px con esto*/
+    background-color: #00c5e8bd;
+}
+*, *:before, *::after{
+    box-sizing: inherit;
+}
+
+
+.contenedor_principal{
+    background-color: aqua;
+    text-align: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+}
+.contenedor_principal h1{
+    padding: 2rem 2rem;
+    margin: 0rem 0rem;
+}
+
+
+@media (min-width: 720px) {
+    .contenedor{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+.contenedor{
+    text-align: center;
+    margin-top: 2rem;
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+    /*border-bottom: 0.5px solid black;*/
+}
+
+.contenedor_izquierda h2{
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1rem;
+}
+@media (max-width: 600px ) {
+    .contenedor_derecha h2{
+        padding-top: 2rem;
+    }
+    .contenedor_izquierda h2{
+        padding-top: 2rem;
+    }
+}
+.contenedor_izquierda{
+    background-color: aquamarine;
+}
+.temperatura h3{
+    font-size: 3rem;
+}
+.temperatura p{
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.humedad h3{
+    font-size: 3rem;
+}
+.humedad p{
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+}
+
+/* Derecha */
+.contenedor_derecha h2{
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1rem;
+}
+.contenedor_derecha{
+    background-color: aquamarine;
+    padding-bottom: 2rem;
+}
+
+.contacto{
+    font-size: 1.3rem;
+    font-family: cursive;
+    text-align: right;
+}
+
+.abajo{
+    display: grid;
+    grid-template-rows: 1fr;
+    text-align: center;
+    border-bottom: 2px solid black;
+    
+    padding-bottom: 4rem;
+}
+.abajo h2{
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1rem;
+    
+}
+
+.abajo p{
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 4rem;
+    
+}
+
+.temperatura_agua{
+    background-color: aquamarine;
+}
